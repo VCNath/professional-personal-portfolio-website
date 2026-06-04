@@ -2,6 +2,21 @@ import { Button } from '@/components/Button'
 import { SectionHeading } from '@/components/SectionHeading'
 import { resumeSkillGroups } from '@/lib/data'
 
+const contactLinks = [
+  {
+    label: 'vcath@hotmail.com',
+    href: 'mailto:vcath@hotmail.com',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/nathaniel-varga-chauvin-16240a139',
+  },
+  {
+    label: 'nathanielvc.com',
+    href: 'https://nathanielvc.com/',
+  },
+]
+
 export default function ResumePage() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8 lg:py-20">
@@ -22,8 +37,11 @@ export default function ResumePage() {
             improvements that support better business decisions.
           </p>
           <div className="mt-7">
-            <Button href="/resume.pdf">Download Resume PDF</Button>
+            <Button href="/resume.pdf">Open Resume PDF</Button>
           </div>
+          <p className="mt-5 text-sm leading-6 text-slate-600">
+            Public portfolio: https://nathanielvc.com/
+          </p>
         </article>
 
         <div className="grid gap-5">
@@ -49,6 +67,17 @@ export default function ResumePage() {
           ))}
         </div>
       </div>
+
+      <article className="mt-6 rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <h2 className="text-xl font-semibold text-slate-950">Contact</h2>
+        <div className="mt-5 grid gap-3 sm:grid-cols-3">
+          {contactLinks.map((link) => (
+            <Button key={link.label} href={link.href} variant="secondary">
+              {link.label}
+            </Button>
+          ))}
+        </div>
+      </article>
     </section>
   )
 }

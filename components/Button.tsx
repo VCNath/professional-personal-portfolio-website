@@ -19,7 +19,7 @@ export function Button({ href, children, variant = 'primary' }: ButtonProps) {
 
   if (isExternal) {
     return (
-      <a href={href} target="_blank" rel="noreferrer" className={className}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
         {children}
       </a>
     )

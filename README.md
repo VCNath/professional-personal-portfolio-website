@@ -2,13 +2,16 @@
 
 A professional personal portfolio website for Nathaniel Varga-Chauvin, built to support a LinkedIn profile refresh and present work in business operations, sales operations, quoting workflows, dashboard development, project support, and practical analytics.
 
+Live site: `https://nathanielvc.com/`
+
 ## Stack
 
 - Next.js App Router
 - TypeScript
 - Tailwind CSS
 - Static content
-- Vercel-ready deployment
+- Hosted on Vercel
+- Package manager: Bun
 
 This project is a Next.js app. The `.next` directory is local build output and should not be committed.
 
@@ -31,7 +34,7 @@ Run the development server:
 bun run dev
 ```
 
-Open `http://localhost:3000`.
+Open the local URL printed by Next.js in your terminal.
 
 ## Building Locally
 
@@ -49,16 +52,23 @@ bun run start
 
 ## Deploying to Vercel
 
-Vercel should auto-detect this as a Next.js project.
+The live site is hosted on Vercel at `https://nathanielvc.com/`. Vercel should auto-detect this as a Next.js App Router project.
 
 Use these settings:
 
 - Framework preset: `Next.js`
 - Install command: `bun install`
 - Build command: `bun run build`
-- Output directory: leave blank
+- Output directory: leave blank on Vercel
+- Local build output: `.next`
 
 The site does not need a `vercel.json` file.
+
+## Domain
+
+- Custom domain: `nathanielvc.com`
+- Managed through Vercel project settings
+- Future DNS or domain changes should be handled in Vercel settings
 
 ## Deploying to Netlify
 
@@ -93,9 +103,17 @@ public/resume.pdf
 
 Replace that file with the latest CV whenever you want to update the public resume.
 
+The resume should be accessible at:
+
+```text
+https://nathanielvc.com/resume.pdf
+```
+
 ## Updating Links
 
 To update the LinkedIn or email links, edit:
 
 - `app/page.tsx`
 - `app/contact/page.tsx`
+- `app/resume/page.tsx`
+- `components/Footer.tsx`
