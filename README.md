@@ -10,30 +10,92 @@ A professional personal portfolio website for Nathaniel Varga-Chauvin, built to 
 - Static content
 - Vercel-ready deployment
 
-## Setup
+This project is a Next.js app. The `.next` directory is local build output and should not be committed.
+
+## Contact Details
+
+- Email: `vcath@hotmail.com`
+- LinkedIn: `https://www.linkedin.com/in/nathaniel-varga-chauvin-16240a139`
+
+## Running Locally
 
 Install dependencies:
 
 ```bash
-npm install
+bun install
 ```
-
-## Local Development
 
 Run the development server:
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 Open `http://localhost:3000`.
 
-## Build
+## Building Locally
 
 Create a production build:
 
 ```bash
-npm run build
+bun run build
 ```
 
-The site is designed for straightforward deployment to Vercel.
+Preview the production build locally:
+
+```bash
+bun run start
+```
+
+## Deploying to Vercel
+
+Vercel should auto-detect this as a Next.js project.
+
+Use these settings:
+
+- Framework preset: `Next.js`
+- Install command: `bun install`
+- Build command: `bun run build`
+- Output directory: leave blank
+
+The site does not need a `vercel.json` file.
+
+## Deploying to Netlify
+
+Vercel is the preferred deployment target for this Next.js app. Netlify can still deploy it if you choose the Next.js framework support.
+
+Use these settings:
+
+- Build command: `bun run build`
+- Publish directory: `.next`
+- Framework: `Next.js`
+
+Do not use Vite settings such as `dist` for this project.
+
+## Custom Domain
+
+After deploying, add your domain in the hosting provider dashboard.
+
+For Vercel:
+
+1. Open the project dashboard.
+2. Go to Settings, then Domains.
+3. Add the custom domain.
+4. Follow Vercel's DNS instructions at your domain registrar.
+
+## Updating the Resume PDF
+
+The resume download links point to:
+
+```text
+public/resume.pdf
+```
+
+Replace that file with the latest CV whenever you want to update the public resume.
+
+## Updating Links
+
+To update the LinkedIn or email links, edit:
+
+- `app/page.tsx`
+- `app/contact/page.tsx`

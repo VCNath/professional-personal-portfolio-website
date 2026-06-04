@@ -7,8 +7,8 @@ const contactLinks = [
     href: 'https://www.linkedin.com/in/nathaniel-varga-chauvin-16240a139',
   },
   {
-    label: 'your.email@example.com',
-    href: 'mailto:your.email@example.com',
+    label: 'vcath@hotmail.com',
+    href: 'mailto:vcath@hotmail.com',
   },
   {
     label: 'Resume',
