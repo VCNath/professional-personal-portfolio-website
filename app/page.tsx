@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:px-8">
+      <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="About"
           title="Practical business analysis grounded in day-to-day operations."

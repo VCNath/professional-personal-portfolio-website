@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 
 const routes = [
   'https://nathanielvc.com/',
+  'https://nathanielvc.com/weekly-brief',
   'https://nathanielvc.com/projects',
   'https://nathanielvc.com/experience',
   'https://nathanielvc.com/resume',
