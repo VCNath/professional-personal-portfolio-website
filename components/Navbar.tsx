@@ -24,15 +24,15 @@ export function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-30 border-b border-slate-800 bg-slate-950/95 text-white backdrop-blur">
-      <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-4 sm:px-6 xl:px-8">
+    <header className="sticky top-0 z-30 px-3 pt-3">
+      <nav className="mx-auto flex max-w-7xl flex-col gap-4 rounded-[28px] border border-white/40 bg-[#232323]/82 px-5 py-4 text-[#F7F5F0] shadow-sm backdrop-blur-[16px] sm:px-6 xl:px-8">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
           <Link href="/" className="text-base font-semibold">
           Nathaniel Varga-Chauvin
           </Link>
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-slate-300">
+          <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-medium text-[#D9D2C7]">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-white">
+              <Link key={link.href} href={link.href} className="hover:text-[#F7F5F0]">
                 {link.label}
               </Link>
             ))}
@@ -48,14 +48,14 @@ export function Navbar() {
                 id="site-search"
                 type="search"
                 placeholder="Search briefings"
-                className="w-44 rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-white placeholder:text-slate-500"
+                className="w-44 rounded-[20px] border border-white/20 bg-[#F7F5F0]/12 px-3 py-2 text-[#F7F5F0] placeholder:text-[#D9D2C7]/70"
               />
             )}
             <button
               type="button"
               aria-expanded={searchOpen}
               onClick={() => setSearchOpen((open) => !open)}
-              className="rounded-md border border-slate-700 px-3 py-2 font-medium text-slate-200 transition hover:border-blue-400 hover:text-white"
+              className="rounded-[20px] border border-white/20 px-3 py-2 font-medium text-[#D9D2C7] transition hover:border-white/50 hover:text-[#F7F5F0]"
             >
               Search
             </button>
@@ -63,13 +63,13 @@ export function Navbar() {
               type="button"
               aria-pressed={darkMode}
               onClick={toggleDarkMode}
-              className="rounded-md border border-slate-700 px-3 py-2 font-medium text-slate-200 transition hover:border-blue-400 hover:text-white"
+              className="rounded-[20px] border border-white/20 px-3 py-2 font-medium text-[#D9D2C7] transition hover:border-white/50 hover:text-[#F7F5F0]"
             >
               {darkMode ? 'Light' : 'Dark'}
             </button>
             <Link
               href="/weekly-brief#newsletter"
-              className="rounded-md bg-blue-600 px-4 py-2 font-semibold text-white transition hover:bg-blue-500"
+              className="rounded-[20px] bg-[#F7F5F0] px-4 py-2 font-semibold text-[#232323] transition hover:-translate-y-0.5 hover:bg-[#D9D2C7]"
             >
               Subscribe
             </Link>

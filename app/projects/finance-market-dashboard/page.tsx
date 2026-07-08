@@ -43,13 +43,13 @@ const strategyOutputs = [
 export default function FinanceMarketDashboardPage() {
   return (
     <>
-      <section className="border-b border-slate-200 bg-white">
+      <section className="border-b border-white/40 bg-[#F7F5F0]/58 backdrop-blur-[14px]">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8 lg:py-20">
           <div className="flex flex-col justify-center">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-blue-700">
+            <p className="mb-4 text-sm font-semibold uppercase text-[#8C7657]">
               Finance dashboard case study
             </p>
-            <h1 className="text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+            <h1 className="text-4xl font-semibold text-[#232323] sm:text-5xl">
               Market intelligence dashboard for comparing sectors, companies, and futures.
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate-700">
@@ -144,7 +144,7 @@ export default function FinanceMarketDashboardPage() {
         </div>
 
         <div className="mt-8 rounded-lg border border-slate-200 bg-slate-950 p-6 text-white">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-blue-300">
+          <p className="text-sm font-semibold uppercase text-[#D9D2C7]">
             Future architecture
           </p>
           <div className="mt-5 grid gap-4 lg:grid-cols-3">

@@ -246,8 +246,8 @@ function MiniSparkline({ points }: { points: number[] }) {
 
   return (
     <svg viewBox={`0 0 ${width} ${height}`} className="h-12 w-full" role="img" aria-label="Trend sparkline">
-      <path d={d} fill="none" stroke="#38bdf8" strokeWidth="3" strokeLinecap="round" />
-      <path d={`${d} L ${width} ${height} L 0 ${height} Z`} fill="rgba(56,189,248,0.12)" />
+      <path d={d} fill="none" stroke="#8C7657" strokeWidth="3" strokeLinecap="round" />
+      <path d={`${d} L ${width} ${height} L 0 ${height} Z`} fill="rgba(140,118,87,0.14)" />
     </svg>
   )
 }
@@ -271,7 +271,7 @@ function WorldMap() {
 
   return (
     <div className="relative min-h-[360px] overflow-hidden rounded-lg border border-slate-700 bg-slate-950 p-6 shadow-2xl">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.28),transparent_32%),radial-gradient(circle_at_70%_60%,rgba(16,185,129,0.18),transparent_28%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(217,210,199,0.28),transparent_32%),radial-gradient(circle_at_70%_60%,rgba(200,211,195,0.18),transparent_28%)]" />
       <div className="absolute inset-6 rounded-lg border border-slate-800 bg-[linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px)] bg-[size:34px_34px]" />
       {zones.map(([label, className]) => (
         <div key={label} className={`absolute rounded-[45%] blur-[1px] ${className}`} title={label} />
@@ -556,7 +556,7 @@ export default function WeeklyBriefPage() {
           <div className="rounded-lg bg-slate-950 p-8 text-white">
             <p className="text-sm font-semibold uppercase text-sky-300">This Week&apos;s Big Story</p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight">The strong dollar is quietly tightening the world</h2>
-            <div className="mt-8 h-64 rounded-lg border border-slate-800 bg-[radial-gradient(circle_at_30%_30%,rgba(56,189,248,0.32),transparent_30%),radial-gradient(circle_at_70%_70%,rgba(37,99,235,0.28),transparent_34%)]" />
+            <div className="mt-8 h-64 rounded-lg border border-slate-800 bg-[radial-gradient(circle_at_30%_30%,rgba(217,210,199,0.26),transparent_30%),radial-gradient(circle_at_70%_70%,rgba(140,118,87,0.24),transparent_34%)]" />
           </div>
           <div className="space-y-6 text-lg leading-9 text-slate-700">
             <p>

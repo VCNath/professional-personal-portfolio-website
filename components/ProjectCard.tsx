@@ -8,41 +8,41 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, compact = false }: ProjectCardProps) {
   return (
-    <article className="flex h-full flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+    <article className="flex h-full flex-col rounded-[26px] border border-white/45 bg-[#F7F5F0]/72 p-6 shadow-sm backdrop-blur-[14px] transition hover:-translate-y-1">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-blue-700">
+          <p className="text-sm font-semibold uppercase text-[#8C7657]">
             {project.category}
           </p>
-          <h2 className="mt-3 text-xl font-semibold text-slate-950">
+          <h2 className="mt-3 text-xl font-semibold text-[#232323]">
             {project.name}
           </h2>
         </div>
-        <span className="w-fit rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-800">
+        <span className="w-fit rounded-full border border-[#C8D3C3]/70 bg-[#C8D3C3]/35 px-3 py-1 text-xs font-semibold text-[#4F5966]">
           {project.status}
         </span>
       </div>
 
       {!compact && (
-        <div className="mt-6 space-y-4 text-sm leading-6 text-slate-700">
+        <div className="mt-6 space-y-4 text-sm leading-6 text-[#4F5966]">
           <div>
-            <h3 className="font-semibold text-slate-950">Problem</h3>
+            <h3 className="font-semibold text-[#232323]">Problem</h3>
             <p className="mt-1">{project.problem}</p>
           </div>
           <div>
-            <h3 className="font-semibold text-slate-950">Solution</h3>
+            <h3 className="font-semibold text-[#232323]">Solution</h3>
             <p className="mt-1">{project.solution}</p>
           </div>
         </div>
       )}
 
-      {compact && <p className="mt-5 leading-7 text-slate-700">{project.solution}</p>}
+      {compact && <p className="mt-5 leading-7 text-[#4F5966]">{project.solution}</p>}
 
       <div className="mt-6 flex flex-wrap gap-2">
         {project.tools.map((tool) => (
           <span
             key={tool}
-            className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700"
+            className="rounded-full border border-white/50 bg-[#F7F5F0]/60 px-3 py-1 text-xs font-medium text-[#4F5966]"
           >
             {tool}
           </span>
@@ -54,7 +54,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
           {project.href && (
             <Link
               href={project.href}
-              className="inline-flex min-h-10 items-center justify-center rounded-md border border-blue-700 bg-blue-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800"
+              className="inline-flex min-h-10 items-center justify-center rounded-[20px] border border-[#232323] bg-[#232323] px-4 py-2 text-sm font-semibold text-[#F7F5F0] transition hover:-translate-y-0.5 hover:bg-[#253247]"
             >
               View Case Study
             </Link>
@@ -62,7 +62,7 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
           {project.demoHref && (
             <Link
               href={project.demoHref}
-              className="inline-flex min-h-10 items-center justify-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+              className="inline-flex min-h-10 items-center justify-center rounded-[20px] border border-white/50 bg-[#F7F5F0]/70 px-4 py-2 text-sm font-semibold text-[#232323] transition hover:-translate-y-0.5 hover:bg-[#F7F5F0]/90"
             >
               Open Demo
             </Link>

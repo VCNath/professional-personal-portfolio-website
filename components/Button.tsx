@@ -8,14 +8,17 @@ type ButtonProps = {
 }
 
 const variants = {
-  primary: 'border-blue-700 bg-blue-700 text-white hover:bg-blue-800',
-  secondary: 'border-slate-300 bg-white text-slate-900 hover:bg-slate-100',
-  ghost: 'border-transparent bg-slate-100 text-slate-900 hover:bg-slate-200',
+  primary:
+    'border-[#232323] bg-[#232323] text-[#F7F5F0] shadow-sm hover:-translate-y-0.5 hover:bg-[#253247]',
+  secondary:
+    'border-white/50 bg-[#F7F5F0]/70 text-[#232323] shadow-sm backdrop-blur-[14px] hover:-translate-y-0.5 hover:bg-[#F7F5F0]/90',
+  ghost:
+    'border-white/40 bg-[#232323]/10 text-[#232323] backdrop-blur-[12px] hover:-translate-y-0.5 hover:bg-[#232323]/15',
 }
 
 export function Button({ href, children, variant = 'primary' }: ButtonProps) {
   const isExternal = href.startsWith('http')
-  const className = `inline-flex min-h-11 items-center justify-center rounded-md border px-5 py-2.5 text-sm font-semibold transition ${variants[variant]}`
+  const className = `inline-flex min-h-11 items-center justify-center rounded-[22px] border px-5 py-2.5 text-sm font-semibold transition ${variants[variant]}`
 
   if (isExternal) {
     return (

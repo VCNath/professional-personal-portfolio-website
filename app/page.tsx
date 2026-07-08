@@ -10,16 +10,16 @@ export default function Home() {
 
   return (
     <>
-      <section className="border-b border-slate-200 bg-white">
+      <section className="px-3 py-4">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-24">
           <div className="flex flex-col justify-center">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">
+            <p className="mb-4 text-sm font-semibold uppercase text-[#8C7657]">
               Saskatoon, Saskatchewan
             </p>
-            <h1 className="max-w-3xl text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl text-4xl font-semibold text-[#232323] sm:text-5xl lg:text-6xl">
               Business Operations & Analytics Portfolio
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#4F5966]">
               I&apos;m an economics graduate with experience in sales operations,
               quoting, customer-facing support, and project-related workflows. I
               build practical tools that help teams organize work, track
@@ -38,7 +38,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="relative min-h-[320px] overflow-hidden rounded-lg border border-slate-200 bg-slate-100 shadow-sm">
+          <div className="relative min-h-[320px] overflow-hidden rounded-[28px] border border-white/45 bg-[#F7F5F0]/30 shadow-sm backdrop-blur-[14px]">
             <Image
               src="/images/operations-dashboard-hero.png"
               alt="A professional workspace with analytics dashboards on a laptop"
@@ -59,7 +59,7 @@ export default function Home() {
         />
       </section>
 
-      <section className="border-y border-slate-200 bg-white">
+      <section className="border-y border-white/45 bg-[#F7F5F0]/42 backdrop-blur-[14px]">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Focus Areas" title="Where the portfolio is headed." />
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
