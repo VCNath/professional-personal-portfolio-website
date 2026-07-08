@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Weekly Economic Roundup | Nathaniel Varga-Chauvin',
@@ -556,7 +557,15 @@ export default function WeeklyBriefPage() {
           <div className="rounded-lg bg-slate-950 p-8 text-white">
             <p className="text-sm font-semibold uppercase text-sky-300">This Week&apos;s Big Story</p>
             <h2 className="mt-4 text-4xl font-semibold leading-tight">The strong dollar is quietly tightening the world</h2>
-            <div className="mt-8 h-64 rounded-lg border border-slate-800 bg-[radial-gradient(circle_at_30%_30%,rgba(217,210,199,0.26),transparent_30%),radial-gradient(circle_at_70%_70%,rgba(140,118,87,0.24),transparent_34%)]" />
+            <div className="relative mt-8 h-64 overflow-hidden rounded-lg border border-slate-800">
+              <Image
+                src="/images/smoked-glass-dashboard.png"
+                alt="Smoked glass macroeconomic dashboard detail"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 480px, 100vw"
+              />
+            </div>
           </div>
           <div className="space-y-6 text-lg leading-9 text-slate-700">
             <p>
@@ -659,7 +668,7 @@ export default function WeeklyBriefPage() {
             <p className="text-sm font-semibold uppercase text-blue-700">Footer Briefing Desk</p>
             <h2 className="mt-2 text-3xl font-semibold">Newsletter, sources, methodology, and disclaimer</h2>
             <p className="mt-4 leading-8 text-slate-700">
-              This portfolio page demonstrates how Nathaniel could package macroeconomic research, dashboard thinking, and policy analysis for institutional readers. Data shown is illustrative and should not be interpreted as investment advice.
+              This portfolio page demonstrates how I can package macroeconomic research, dashboard thinking, and policy analysis for institutional readers. Data shown is illustrative and should not be interpreted as investment advice.
             </p>
             <div className="mt-5 grid gap-3 text-sm text-slate-600 sm:grid-cols-2">
               <p><strong>Sources:</strong> central banks, statistics agencies, market data providers, and public economic releases.</p>

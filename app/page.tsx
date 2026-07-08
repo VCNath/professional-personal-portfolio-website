@@ -40,8 +40,8 @@ export default function Home() {
           </div>
           <div className="relative min-h-[320px] overflow-hidden rounded-[28px] border border-white/45 bg-[#F7F5F0]/30 shadow-sm backdrop-blur-[14px]">
             <Image
-              src="/images/operations-dashboard-hero.png"
-              alt="A professional workspace with analytics dashboards on a laptop"
+              src="/images/editorial-workspace-hero.png"
+              alt="A refined architectural workspace with abstract macro dashboard visuals"
               fill
               priority
               className="object-cover"
@@ -52,11 +52,22 @@ export default function Home() {
       </section>
 
       <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-16 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="About"
-          title="Practical business analysis grounded in day-to-day operations."
-          description="Nathaniel is an economics graduate from the University of Saskatchewan with experience at Wesco in industrial distribution operations. His work has exposed him to RFQs, quoting workflows, customer communication, outside sales follow-ups, and project support. His current portfolio focuses on dashboard development, workflow improvement, and business analysis."
-        />
+        <div className="grid gap-8 lg:grid-cols-[0.68fr_0.32fr] lg:items-center">
+          <SectionHeading
+            eyebrow="About"
+            title="Practical business analysis grounded in day-to-day operations."
+            description="I am an economics graduate from the University of Saskatchewan with experience at Wesco in industrial distribution operations. My work has exposed me to RFQs, quoting workflows, customer communication, outside sales follow-ups, and project support. My current portfolio focuses on dashboard development, workflow improvement, and business analysis."
+          />
+          <div className="relative min-h-[260px] overflow-hidden rounded-[28px] border border-white/45 bg-[#F7F5F0]/50 shadow-sm backdrop-blur-[14px]">
+            <Image
+              src="/images/policy-research-desk.png"
+              alt="Policy research desk with charts and warm matte materials"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 360px, 100vw"
+            />
+          </div>
+        </div>
       </section>
 
       <section className="border-y border-white/45 bg-[#F7F5F0]/42 backdrop-blur-[14px]">

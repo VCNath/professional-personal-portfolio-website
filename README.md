@@ -1,6 +1,6 @@
 # Nathaniel Varga-Chauvin Portfolio
 
-A professional personal portfolio website for Nathaniel Varga-Chauvin, built to support a LinkedIn profile refresh and present work in business operations, sales operations, quoting workflows, dashboard development, project support, and practical analytics.
+A professional personal portfolio website I use to support my LinkedIn profile and present work in business operations, sales operations, quoting workflows, dashboard development, project support, and practical analytics.
 
 Live site: `https://nathanielvc.com/`
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { SectionHeading } from '@/components/SectionHeading'
 
@@ -65,7 +66,16 @@ export default function FinanceMarketDashboardPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-slate-200 bg-slate-950 p-3 shadow-sm">
+          <div className="overflow-hidden rounded-lg border border-slate-200 bg-slate-950 p-3 shadow-sm">
+            <div className="relative mb-3 min-h-[180px] overflow-hidden rounded-md border border-slate-800">
+              <Image
+                src="/images/smoked-glass-dashboard.png"
+                alt="Premium smoked glass finance dashboard visual"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 560px, 100vw"
+              />
+            </div>
             <div className="mb-3 flex gap-2">
               <span className="h-3 w-3 rounded-full bg-red-400" />
               <span className="h-3 w-3 rounded-full bg-amber-300" />

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://nathanielvc.com'),
   title: 'Nathaniel Varga-Chauvin | Business Operations & Analytics Portfolio',
   description:
-    'Portfolio for Nathaniel Varga-Chauvin, an economics graduate focused on business operations, sales operations, dashboard development, economic analysis, and workflow improvement.',
+    'My portfolio focused on business operations, sales operations, dashboard development, economic analysis, and workflow improvement.',
   alternates: {
     canonical: '/',
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Nathaniel Varga-Chauvin Portfolio',
     title: 'Nathaniel Varga-Chauvin | Business Operations & Analytics Portfolio',
     description:
-      'Portfolio for Nathaniel Varga-Chauvin, focused on business operations, analytics, dashboard development, and workflow improvement.',
+      'My portfolio focused on business operations, analytics, dashboard development, and workflow improvement.',
     type: 'website',
   },
   twitter: {

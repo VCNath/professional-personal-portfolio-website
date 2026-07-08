@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { SectionHeading } from '@/components/SectionHeading'
 import { resumeSkillGroups } from '@/lib/data'
@@ -26,22 +27,33 @@ export default function ResumePage() {
       />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-          <h2 className="text-xl font-semibold text-slate-950">
-            Professional Summary
-          </h2>
-          <p className="mt-4 leading-7 text-slate-700">
-            Economics graduate with experience in sales operations, quoting,
-            customer-facing support, and project-related workflows. Focused on
-            building practical analytics tools, dashboards, and process
-            improvements that support better business decisions.
-          </p>
-          <div className="mt-7">
-            <Button href="/resume.pdf">Open Resume PDF</Button>
+        <article className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+          <div className="relative min-h-[220px]">
+            <Image
+              src="/images/smoked-glass-dashboard.png"
+              alt="Smoked glass dashboard interface with abstract charts"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 480px, 100vw"
+            />
           </div>
-          <p className="mt-5 text-sm leading-6 text-slate-600">
-            Public portfolio: https://nathanielvc.com/
-          </p>
+          <div className="p-6 sm:p-8">
+            <h2 className="text-xl font-semibold text-slate-950">
+              Professional Summary
+            </h2>
+            <p className="mt-4 leading-7 text-slate-700">
+              Economics graduate with experience in sales operations, quoting,
+              customer-facing support, and project-related workflows. Focused on
+              building practical analytics tools, dashboards, and process
+              improvements that support better business decisions.
+            </p>
+            <div className="mt-7">
+              <Button href="/resume.pdf">Open Resume PDF</Button>
+            </div>
+            <p className="mt-5 text-sm leading-6 text-slate-600">
+              Public portfolio: https://nathanielvc.com/
+            </p>
+          </div>
         </article>
 
         <div className="grid gap-5">
