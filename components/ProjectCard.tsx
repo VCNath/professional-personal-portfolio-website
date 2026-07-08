@@ -1,4 +1,5 @@
 import type { Project } from '@/lib/data'
+import Link from 'next/link'
 
 type ProjectCardProps = {
   project: Project
@@ -47,6 +48,27 @@ export function ProjectCard({ project, compact = false }: ProjectCardProps) {
           </span>
         ))}
       </div>
+
+      {(project.href || project.demoHref) && (
+        <div className="mt-6 flex flex-wrap gap-3">
+          {project.href && (
+            <Link
+              href={project.href}
+              className="inline-flex min-h-10 items-center justify-center rounded-md border border-blue-700 bg-blue-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800"
+            >
+              View Case Study
+            </Link>
+          )}
+          {project.demoHref && (
+            <Link
+              href={project.demoHref}
+              className="inline-flex min-h-10 items-center justify-center rounded-md border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-100"
+            >
+              Open Demo
+            </Link>
+          )}
+        </div>
+      )}
     </article>
   )
 }

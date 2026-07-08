@@ -6,6 +6,8 @@ import { SkillCard } from '@/components/SkillCard'
 import { focusAreas, projects } from '@/lib/data'
 
 export default function Home() {
+  const featuredProjects = projects.filter((project) => project.featured).slice(0, 3)
+
   return (
     <>
       <section className="border-b border-slate-200 bg-white">
@@ -74,7 +76,7 @@ export default function Home() {
           title="Dashboard, workflow, and analysis projects."
         />
         <div className="mt-8 grid gap-5 lg:grid-cols-3">
-          {projects.slice(0, 3).map((project) => (
+          {featuredProjects.map((project) => (
             <ProjectCard key={project.name} project={project} compact />
           ))}
         </div>

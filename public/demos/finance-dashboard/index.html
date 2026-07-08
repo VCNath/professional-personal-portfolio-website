@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Finance Data Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Market comparison dashboard</p>
+        <h1>Finance Data</h1>
+      </div>
+      <div class="status">
+        <span id="coverageLabel"></span>
+        <span id="generatedLabel"></span>
+      </div>
+    </header>
+
+    <section class="toolbar" aria-label="Dashboard controls">
+      <div class="control">
+        <label for="rangeSelect">Range</label>
+        <select id="rangeSelect">
+          <option value="12">1Y</option>
+          <option value="36">3Y</option>
+          <option value="60" selected>5Y</option>
+          <option value="0">All</option>
+        </select>
+      </div>
+      <div class="control grow">
+        <span>Markets</span>
+        <div id="datasetFilters" class="toggle-row"></div>
+        <div class="quick-actions">
+          <button type="button" id="selectAll">All markets</button>
+          <button type="button" id="clearToCore">Core set</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="metric-grid" id="metricGrid" aria-label="Portfolio summary"></section>
+
+    <section class="panel compare-panel" aria-label="Comparison tool">
+      <div class="panel-head">
+        <div>
+          <h2>Comparison Tool</h2>
+          <p>Choose two symbols to compare return, risk, drawdown, and latest value.</p>
+        </div>
+      </div>
+      <div class="compare-controls">
+        <label for="compareA">Primary</label>
+        <select id="compareA"></select>
+        <label for="compareB">Compare To</label>
+        <select id="compareB"></select>
+      </div>
+      <div id="compareCards" class="compare-grid"></div>
+      <div id="compareChart" class="chart mini"></div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="panel wide">
+        <div class="panel-head">
+          <div>
+            <h2>Indexed Performance</h2>
+            <p>Monthly closes indexed to 100 at the start of the selected range.</p>
+          </div>
+          <span id="seriesCount"></span>
+        </div>
+        <div id="lineChart" class="chart"></div>
+        <div id="lineLegend" class="legend"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Return vs Risk</h2>
+            <p>Annualized return and volatility by symbol.</p>
+          </div>
+        </div>
+        <div id="scatterChart" class="chart compact"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Top Movers</h2>
+            <p>Best and worst performers over the selected range.</p>
+          </div>
+        </div>
+        <div id="barChart" class="chart compact"></div>
+      </div>
+    </section>
+
+    <section class="dashboard-grid bottom">
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Correlation</h2>
+            <p>Monthly return relationship across symbols.</p>
+          </div>
+        </div>
+        <div id="correlationGrid" class="correlation"></div>
+      </div>
+
+      <div class="panel wide">
+        <div class="panel-head">
+          <div>
+            <h2>Comparison Table</h2>
+            <p>Coverage, latest close, return, volatility, and drawdown.</p>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Market</th>
+                <th>Symbol</th>
+                <th>Latest Close</th>
+                <th>Total Return</th>
+                <th>Ann. Return</th>
+                <th>Volatility</th>
+                <th>Max Drawdown</th>
+              </tr>
+            </thead>
+            <tbody id="comparisonTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

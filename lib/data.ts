@@ -5,6 +5,9 @@ export type Project = {
   problem: string
   solution: string
   tools: string[]
+  href?: string
+  demoHref?: string
+  featured?: boolean
 }
 
 export const focusAreas = [
@@ -17,6 +20,28 @@ export const focusAreas = [
 ]
 
 export const projects: Project[] = [
+  {
+    name: 'Finance Market Intelligence Dashboard',
+    category: 'Finance / Data Dashboard',
+    status: 'Live Demo',
+    problem:
+      'Market data can be scattered across equities, ETFs, futures, and proxy instruments, making it hard to compare performance, risk, drawdown, and correlations quickly.',
+    solution:
+      'A Docker-refreshable SQLite and CSV data pipeline with a browser dashboard for comparing 17 market groups, 36 instruments, indexed performance, return versus risk, and pairwise strategy comparisons.',
+    tools: [
+      'Python',
+      'SQLite',
+      'Docker',
+      'Power Automate',
+      'Dashboard design',
+      'Market data',
+      'CSV/XLSX outputs',
+      'Interactive charts',
+    ],
+    href: '/projects/finance-market-dashboard',
+    demoHref: '/demos/finance-dashboard/index.html',
+    featured: true,
+  },
   {
     name: 'Quote & Project Management Dashboard',
     category: 'Sales Operations / Excel Dashboard',
@@ -34,6 +59,7 @@ export const projects: Project[] = [
       'KPI design',
       'Project tracking',
     ],
+    featured: true,
   },
   {
     name: 'Canadian Regional Economic Intelligence Dashboard',
@@ -52,6 +78,7 @@ export const projects: Project[] = [
       'Python',
       'Regional comparison',
     ],
+    featured: true,
   },
   {
     name: 'Inside Sales Representative AI Prompt Manual',
