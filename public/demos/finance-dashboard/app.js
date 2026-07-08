@@ -1,6 +1,8 @@
 const data = window.DASHBOARD_DATA;
 const palette = ["#2f6fbb", "#147c7c", "#b7791f", "#7a5bb8", "#3f7d3d", "#b3404a", "#62748a", "#c25a31", "#5b8c85", "#805ad5", "#4a7c59", "#8a6f2a", "#2c7a9b", "#9a4d65", "#526d3f", "#6b7280"];
 const coreDatasets = new Set(["faang", "dow", "tsx_proxy", "euro_equivalent", "china", "japan", "south_korea"]);
+let liveQuotes = new Map();
+let latestRun = null;
 let state = {
   rangeMonths: 60,
   datasets: new Set(data.datasets.map((item) => item.slug)),
@@ -20,6 +22,36 @@ const groupBy = (rows, keyFn) => rows.reduce((map, row) => {
   map.get(key).push(row);
   return map;
 }, new Map());
+
+function liveKey(row) {
+  return `${row.datasetSlug}:${row.symbol}`;
+}
+
+async function loadLiveQuotes() {
+  try {
+    const response = await fetch("/api/market-latest", { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    if (payload.status !== "ok") {
+      document.querySelector("#liveStatusLabel").textContent = payload.status === "unconfigured" ? "Not configured" : "Unavailable";
+      document.querySelector("#liveRefreshLabel").textContent = payload.message || "Static dashboard fallback";
+      document.querySelector("#liveSourceLabel").textContent = "Historical static data shown";
+      return;
+    }
+    liveQuotes = new Map((payload.quotes || []).map((quote) => [`${quote.dataset_slug}:${quote.symbol}`, quote]));
+    latestRun = payload.latestRun;
+    document.querySelector("#liveStatusLabel").textContent = `${liveQuotes.size} latest quotes`;
+    document.querySelector("#liveRefreshLabel").textContent = latestRun?.finished_at
+      ? new Date(latestRun.finished_at).toLocaleString()
+      : "Refresh pending";
+    document.querySelector("#liveSourceLabel").textContent = payload.message || "Best-effort intraday polling";
+    render();
+  } catch {
+    document.querySelector("#liveStatusLabel").textContent = "Static mode";
+    document.querySelector("#liveRefreshLabel").textContent = "No live API detected";
+    document.querySelector("#liveSourceLabel").textContent = "Historical static data shown";
+  }
+}
 
 function bySelectedDataset(row) {
   return state.datasets.has(row.datasetSlug);
@@ -59,7 +91,10 @@ function metricForRange(rows) {
       totalReturnPct: totalReturn * 100,
       annualizedReturnPct: annReturn * 100,
       volatilityPct: volatility * 100,
-      latestClose: latest.close
+      latestClose: liveQuotes.get(seriesId)?.price ?? latest.close,
+      liveChangePercent: liveQuotes.get(seriesId)?.change_percent ?? null,
+      liveQuoteTime: liveQuotes.get(seriesId)?.quote_time ?? null,
+      liveSourceStatus: liveQuotes.get(seriesId)?.source_status ?? null
     };
   }).sort((a, b) => b.totalReturnPct - a.totalReturnPct);
 }
@@ -455,7 +490,10 @@ function renderTable(metrics) {
     <tr>
       <td>${item.dataset}</td>
       <td><strong>${item.displaySymbol}</strong></td>
-      <td>${fmtMoney(item.latestClose)}</td>
+      <td>
+        ${fmtMoney(item.latestClose)}
+        ${item.liveChangePercent === null ? "" : `<span class="${cls(item.liveChangePercent)}"> ${fmtSignedPct(item.liveChangePercent)}</span>`}
+      </td>
       <td class="${cls(item.totalReturnPct)}">${fmtSignedPct(item.totalReturnPct)}</td>
       <td class="${cls(item.annualizedReturnPct)}">${fmtSignedPct(item.annualizedReturnPct)}</td>
       <td>${fmtPct(item.volatilityPct)}</td>
@@ -495,3 +533,4 @@ document.querySelector("#compareB").addEventListener("change", (event) => {
 
 bindQuickActions();
 render();
+loadLiveQuotes();

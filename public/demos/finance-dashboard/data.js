@@ -1,6 +1,6 @@
 window.DASHBOARD_DATA = {
-  "generatedAt": "2026-07-07T22:24:27+00:00",
-  "sourceDatabase": "/app/outputs/docker_market_datasets/market_data.sqlite",
+  "generatedAt": "2026-07-08T08:01:11+00:00",
+  "sourceDatabase": "outputs/docker_market_datasets/market_data.sqlite",
   "summary": {
     "firstDate": "2001-07-02",
     "latestDate": "2026-07-07",

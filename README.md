@@ -11,6 +11,7 @@ Live site: `https://nathanielvc.com/`
 - Tailwind CSS
 - Static content
 - Hosted on Vercel
+- Vercel Cron for market quote refresh
 - Package manager: Bun
 
 This project is a Next.js app. The `.next` directory is local build output and should not be committed.
@@ -62,7 +63,30 @@ Use these settings:
 - Output directory: leave blank on Vercel
 - Local build output: `.next`
 
-The site does not need a `vercel.json` file.
+The site includes `vercel.json` for the market-data refresh cron:
+
+```json
+{
+  "crons": [
+    {
+      "path": "/api/market-refresh",
+      "schedule": "*/15 * * * 1-5"
+    }
+  ]
+}
+```
+
+Set these Vercel environment variables before enabling the live quote layer:
+
+```text
+SUPABASE_URL
+SUPABASE_SERVICE_ROLE_KEY
+CRON_SECRET
+MARKET_REFRESH_SECRET
+```
+
+`/api/market-refresh` accepts Vercel Cron requests with `Authorization: Bearer CRON_SECRET` and manual requests with `Authorization: Bearer MARKET_REFRESH_SECRET`.
+`/api/market-latest` serves latest quote data to the static dashboard demo.
 
 ## Domain
 

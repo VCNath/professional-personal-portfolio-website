@@ -189,6 +189,35 @@ select {
   color: var(--muted);
 }
 
+.live-status {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.live-status > div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  padding: 12px 14px;
+}
+
+.live-status span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+
+.live-status strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
 .compare-panel {
   margin: 14px 0;
 }
@@ -397,6 +426,7 @@ th {
   }
   .status { justify-content: flex-start; }
   .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .live-status { grid-template-columns: 1fr; }
   .compare-controls { grid-template-columns: 1fr; }
   .compare-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .dashboard-grid,

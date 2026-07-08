@@ -41,6 +41,21 @@
 
     <section class="metric-grid" id="metricGrid" aria-label="Portfolio summary"></section>
 
+    <section class="live-status" aria-live="polite">
+      <div>
+        <span>Live quote layer</span>
+        <strong id="liveStatusLabel">Checking...</strong>
+      </div>
+      <div>
+        <span>Latest refresh</span>
+        <strong id="liveRefreshLabel">Waiting for Supabase</strong>
+      </div>
+      <div>
+        <span>Source note</span>
+        <strong id="liveSourceLabel">Best-effort intraday polling</strong>
+      </div>
+    </section>
+
     <section class="panel compare-panel" aria-label="Comparison tool">
       <div class="panel-head">
         <div>
