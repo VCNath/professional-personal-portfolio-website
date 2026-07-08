@@ -5,6 +5,7 @@ const routes = [
   'https://nathanielvc.com/weekly-brief',
   'https://nathanielvc.com/projects',
   'https://nathanielvc.com/projects/finance-market-dashboard',
+  'https://nathanielvc.com/projects/nvc-capital-lab',
   'https://nathanielvc.com/experience',
   'https://nathanielvc.com/resume',
   'https://nathanielvc.com/contact',

@@ -120,9 +120,9 @@ export default function FinanceMarketDashboardPage() {
 
       <section className="mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Future tool concept"
-          title="Mock trading strategy drafting sandbox."
-          description="The next step is a simulated planning tool that lets users draft strategy ideas before anything touches real money. It would be educational, assumption-driven, and explicitly non-advisory."
+          eyebrow="Related product build"
+          title="Paper-trading sandbox built from the market-data foundation."
+          description="The next step from this dataset pipeline is NVC Capital Lab: a paper-trading website with portfolio analytics, order validation, watchlists, lessons, and Docker-backed market-history timelines."
         />
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
@@ -177,6 +177,9 @@ export default function FinanceMarketDashboardPage() {
               </p>
             </div>
           </div>
+        </div>
+        <div className="mt-8">
+          <Button href="/projects/nvc-capital-lab">View NVC Capital Lab</Button>
         </div>
       </section>
     </>

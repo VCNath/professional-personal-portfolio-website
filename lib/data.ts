@@ -98,20 +98,26 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: 'Mock Portfolio & Investing Sandbox',
-    category: 'Finance / Product Concept',
-    status: 'Concept',
+    name: 'NVC Capital Lab',
+    category: 'Finance / Paper-Trading SaaS',
+    status: 'Portfolio Build',
     problem:
-      'People may want to test trading strategies and portfolio decisions before using real money.',
+      'New investors need a safer way to practice portfolio decisions, order entry, allocation review, and risk analysis without implying that real securities or real funds will move.',
     solution:
-      'A simulated investing app concept where users can mock trades, build sample portfolios, and evaluate performance using APIs and market data.',
+      'A polished paper-trading web app with a Next.js interface, Supabase schema, Docker-built market-history database, delayed/best-effort price timeline, portfolio analytics, watchlists, lessons, challenges, and validated paper order flow.',
     tools: [
-      'Product planning',
-      'Finance concepts',
-      'API planning',
-      'Portfolio logic',
-      'User workflow design',
+      'Next.js',
+      'TypeScript',
+      'Supabase',
+      'Docker',
+      'SQLite',
+      'Paper trading',
+      'Portfolio analytics',
+      'Market data pipeline',
+      'Product design',
     ],
+    href: '/projects/nvc-capital-lab',
+    featured: true,
   },
 ]
 
