@@ -71,11 +71,14 @@ export default function NVCCapitalLabPage() {
               brokerage routing or real-money movement.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="https://github.com/VCNath/Finance-Data/tree/codex/nvc-capital-lab-paper-trading">
-                View Source Branch
+              <Button href="https://nvc-capital-lab-live.vercel.app">
+                Open Live App
               </Button>
-              <Button href="/projects" variant="secondary">
-                Back to Projects
+              <Button
+                href="https://github.com/VCNath/Finance-Data/tree/codex/nvc-capital-lab-paper-trading"
+                variant="secondary"
+              >
+                View Source
               </Button>
             </div>
           </div>
@@ -106,7 +109,7 @@ export default function NVCCapitalLabPage() {
               <div className="mt-5 rounded-lg border border-slate-200 bg-white p-4">
                 <div className="mb-3 flex items-center justify-between">
                   <span className="text-sm font-semibold text-slate-800">Timeline data</span>
-                  <span className="text-xs font-semibold text-emerald-700">Docker SQLite linked</span>
+                  <span className="text-xs font-semibold text-emerald-700">Market history linked</span>
                 </div>
                 <div className="flex h-28 items-end gap-2">
                   {[42, 48, 45, 56, 62, 58, 70, 74, 68, 81, 88, 84].map((height, index) => (

@@ -7,6 +7,7 @@ export type Project = {
   tools: string[]
   href?: string
   demoHref?: string
+  demoLabel?: string
   featured?: boolean
 }
 
@@ -117,6 +118,8 @@ export const projects: Project[] = [
       'Product design',
     ],
     href: '/projects/nvc-capital-lab',
+    demoHref: 'https://nvc-capital-lab-live.vercel.app',
+    demoLabel: 'Open Live App',
     featured: true,
   },
 ]
