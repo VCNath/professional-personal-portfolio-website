@@ -70,11 +70,13 @@ The site includes `vercel.json` for the market-data refresh cron:
   "crons": [
     {
       "path": "/api/market-refresh",
-      "schedule": "*/15 * * * 1-5"
+      "schedule": "0 15 * * 1-5"
     }
   ]
 }
 ```
+
+The cron is set to a once-per-weekday refresh so it remains compatible with Vercel Hobby plan limits.
 
 Set these Vercel environment variables before enabling the live quote layer:
 
